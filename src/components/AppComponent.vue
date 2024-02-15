@@ -23,15 +23,13 @@ export default {
 
 <template>
     <div>
-        <h1>Eventi disponibili</h1>
+        <!-- <h1>Eventi disponibili</h1> -->
     </div>
 </template>
 
 <style scoped lang="scss">
 // importo variabili
 // @use './styles/partials/variables' as *;
-
-// ...qui eventuale SCSS di AppComponent
 
 h1 {
     text-align: center;
