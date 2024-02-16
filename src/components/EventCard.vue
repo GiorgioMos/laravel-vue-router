@@ -1,7 +1,8 @@
 <script>
 export default {
     name: "EventCard",
-    props: ["item"]
+    props: ["item"],
+
 }
 </script>
 

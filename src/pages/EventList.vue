@@ -30,6 +30,7 @@ export default {
             </div>
         </main>
     </body>
+    <EventCard v-for="evento in store.eventList" :item="evento" />
 </template>
 
 <style scoped>

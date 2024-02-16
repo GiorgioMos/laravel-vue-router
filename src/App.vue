@@ -2,14 +2,28 @@
 import axios from 'axios'; //importo Axios
 import { store } from "./store.js" //state management
 import EventCard from './components/EventCard.vue';
+import { RouterLink } from 'vue-router';
 
 export default {
 	components: {
-
+		RouterLink
 	},
 	data() {
 		return {
-			store
+			menuitems: [
+				{
+					routeName: "home",
+					label: "Homepage"
+				},
+				{
+					routeName: "about",
+					label: "Chi siamo"
+				},
+				{
+					routeName: "events",
+					label: "Eventi"
+				}
+			]
 		}
 	},
 	mounted() {
@@ -36,6 +50,13 @@ export default {
 </script>
 
 <template>
+	<ul>
+		<li class="header" v-for="(item, index) in menuitems" :key="index">
+			<RouterLink :to="{ name: item.routeName }">
+				{{ item.label }}
+			</RouterLink>
+		</li>
+	</ul>
 	<router-view></router-view>
 </template>
 
@@ -45,10 +66,23 @@ export default {
 </style>
 
 <style scoped lang="scss">
-// importo variabili
-// @use './styles/partials/variables' as *;
-
 h1 {
 	text-align: center;
+}
+
+.header {
+	list-style-type: none;
+	padding: 20px 100px;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+ul {
+	display: flex;
+	justify-content: center;
+	background-color: rgb(113, 113, 219);
 }
 </style>
